@@ -16,7 +16,7 @@ namespace ConsoleApp1
             Lottery lottery = new Lottery();
             lottery.ticketBought += Lottery_ticketBought;
 
-            LotteryManager manager = new LotteryManager();
+            //LotteryManager manager = new LotteryManager();
             manager.WinnerChosen += Manager_WinnerChosen;
 
             Console.WriteLine("Would You like to buy a lottery ticket? Y/N");
@@ -30,7 +30,7 @@ namespace ConsoleApp1
             else
             {
                 Console.WriteLine("To the Manager: Choose a winner");
-                manager.SelectWinner();
+                //manager.SelectWinner();
                 Console.ReadLine();
             }
 
