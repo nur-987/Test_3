@@ -24,7 +24,8 @@ namespace Question2
             myDel += myClass2.Print2;
             myDel += myClass3.Print3;
 
-            //not sure how to allow delegate to accept multiple types. 
+            //delegate to accept multiple types
+            //Use boxing and unboxing
         }
     }
     class FirstClass
