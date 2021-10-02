@@ -11,36 +11,49 @@ namespace Question2
     /// Delegates
     /// </summary>
     
-    delegate void MyDelegate(int x, out int);
+    delegate void MyDelegate(object x, out object y);
 
     class Program
     {
         static void Main(string[] args)
         {
             FirstClass myClass = new FirstClass();
+            SecondClass myClass2 = new SecondClass();
+            ThirdClass myClass3 = new ThirdClass();
             MyDelegate myDel = new MyDelegate(myClass.Print);
-            myDel += myClass.Print2;
-            myDel += myClass.Print3;
+            myDel += myClass2.Print2;
+            myDel += myClass3.Print3;
 
             //not sure how to allow delegate to accept multiple types. 
         }
     }
     class FirstClass
     {
-        public void Print(int i, out int x)
+        public void Print(object i, out object x)
         {
-            Console.WriteLine(i);
-            x = i + 2;
+            x = (int)i;
+
+            Console.WriteLine(x);
+            
         }
-        public void Print2(string str, out string newS)
+    }
+
+    class SecondClass
+    {
+        public void Print2(object str, out object newS)
         {
-            Console.WriteLine(str);
-            newS = "Hello" + str;
+            newS = (string)str;
+            Console.WriteLine(newS);
+            
         }
-        public void Print3(double dbl, out double newDbl)
+    }
+    class ThirdClass
+    {
+        public void Print3(object dbl, out object newDbl)
         {
-            Console.WriteLine(dbl);
-            newDbl = dbl * 100;
+            newDbl = (double)dbl;
+            Console.WriteLine(newDbl);
+
         }
     }
 }
